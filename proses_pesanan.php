@@ -5,18 +5,19 @@ require_once 'dbkoneksi.php';
    $_nama_produk = $_POST['nama_produk'];
    $_tanggal = $_POST['tanggal'];
    $_qty = $_POST['qty'];
+   $_harga = $_POST['harga'];
    $_nama_pemesan = $_POST['nama_pemesan'];
    $_alamat_pemesan = $_POST['alamat_pemesan'];
 
    $_proses = $_POST['proses'];
 
    // array data
-   $ar_data[]=$_nama_produk; // ? 1
+   $ar_data[]=$_nama_produk;
    $ar_data[]=$_tanggal;
    $ar_data[]=$_qty;
-   $ar_data[]= 10000 * $_qty;
+   $ar_data[]=$_harga * $_qty;
    $ar_data[]=$_nama_pemesan; 
-   $ar_data[]=$_alamat_pemesan;// ? 7
+   $ar_data[]=$_alamat_pemesan;
 
    if($_proses == "Simpan"){
     // data baru
@@ -32,4 +33,4 @@ require_once 'dbkoneksi.php';
    }
 
    header('location:list_pesanan.php');
-?>
+?
